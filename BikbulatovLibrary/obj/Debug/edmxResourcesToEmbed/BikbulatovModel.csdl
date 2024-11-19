@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LibraryID" Type="Int32" Nullable="false" />
+    <Property Name="Post" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AdmissionYear" Type="Int32" Nullable="false" />
+    <Property Name="Education" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="Int32" Nullable="false" />
+    <Property Name="Experience" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="EmployeeAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeePassport" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeINN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeSNILS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeBirthday" Type="DateTime" Precision="0" />
+    <Property Name="EmployeePhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Library" Relationship="Self.FK_Employee_Library" FromRole="Employee" ToRole="Library" />
+    <NavigationProperty Name="FundReplenishment" Relationship="Self.FK_FundReplenishment_Employee" FromRole="Employee" ToRole="FundReplenishment" />
+  </EntityType>
+  <EntityType Name="FundReplenishment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FundID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LiteratureSource" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LiteratureType" Type="Int32" Nullable="false" />
+    <Property Name="Publisher" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PublishDate" Type="Int32" />
+    <Property Name="CopyNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_FundReplenishment_Employee" FromRole="FundReplenishment" ToRole="Employee" />
+    <NavigationProperty Name="LibraryFund" Relationship="Self.FK_FundReplenishment_LibraryFund" FromRole="FundReplenishment" ToRole="LibraryFund" />
+    <NavigationProperty Name="LiteratureType1" Relationship="Self.FK_FundReplenishment_LiteratureType" FromRole="FundReplenishment" ToRole="LiteratureType" />
+  </EntityType>
+  <EntityType Name="Library">
+    <Key>
+      <PropertyRef Name="LibraryID" />
+    </Key>
+    <Property Name="LibraryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LibraryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LibraryAdress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LibraryCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Library" FromRole="Library" ToRole="Employee" />
+    <NavigationProperty Name="LibraryFund" Relationship="Self.FK_LibraryFund_Library" FromRole="Library" ToRole="LibraryFund" />
+  </EntityType>
+  <EntityType Name="LibraryFund">
+    <Key>
+      <PropertyRef Name="FundID" />
+    </Key>
+    <Property Name="FundID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FundName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LibraryID" Type="Int32" Nullable="false" />
+    <Property Name="Books" Type="Int32" Nullable="false" />
+    <Property Name="Magazines" Type="Int32" Nullable="false" />
+    <Property Name="Newspapers" Type="Int32" Nullable="false" />
+    <Property Name="Collections" Type="Int32" Nullable="false" />
+    <Property Name="Dissertations" Type="Int32" Nullable="false" />
+    <Property Name="Abstracts" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FundReplenishment" Relationship="Self.FK_FundReplenishment_LibraryFund" FromRole="LibraryFund" ToRole="FundReplenishment" />
+    <NavigationProperty Name="Library" Relationship="Self.FK_LibraryFund_Library" FromRole="LibraryFund" ToRole="Library" />
+  </EntityType>
+  <EntityType Name="LiteratureType">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="FundReplenishment" Relationship="Self.FK_FundReplenishment_LiteratureType" FromRole="LiteratureType" ToRole="FundReplenishment" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Employee_Library">
+    <End Role="Library" Type="Self.Library" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Library">
+        <PropertyRef Name="LibraryID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="LibraryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FundReplenishment_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="FundReplenishment" Type="Self.FundReplenishment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="FundReplenishment">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FundReplenishment_LibraryFund">
+    <End Role="LibraryFund" Type="Self.LibraryFund" Multiplicity="1" />
+    <End Role="FundReplenishment" Type="Self.FundReplenishment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LibraryFund">
+        <PropertyRef Name="FundID" />
+      </Principal>
+      <Dependent Role="FundReplenishment">
+        <PropertyRef Name="FundID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FundReplenishment_LiteratureType">
+    <End Role="LiteratureType" Type="Self.LiteratureType" Multiplicity="1" />
+    <End Role="FundReplenishment" Type="Self.FundReplenishment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LiteratureType">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="FundReplenishment">
+        <PropertyRef Name="LiteratureType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LibraryFund_Library">
+    <End Role="Library" Type="Self.Library" Multiplicity="1" />
+    <End Role="LibraryFund" Type="Self.LibraryFund" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Library">
+        <PropertyRef Name="LibraryID" />
+      </Principal>
+      <Dependent Role="LibraryFund">
+        <PropertyRef Name="LibraryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BikbulatovLibraryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Employee" EntityType="Self.Employee" />
+    <EntitySet Name="FundReplenishment" EntityType="Self.FundReplenishment" />
+    <EntitySet Name="Library" EntityType="Self.Library" />
+    <EntitySet Name="LibraryFund" EntityType="Self.LibraryFund" />
+    <EntitySet Name="LiteratureType" EntityType="Self.LiteratureType" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Employee_Library" Association="Self.FK_Employee_Library">
+      <End Role="Library" EntitySet="Library" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FundReplenishment_Employee" Association="Self.FK_FundReplenishment_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="FundReplenishment" EntitySet="FundReplenishment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FundReplenishment_LibraryFund" Association="Self.FK_FundReplenishment_LibraryFund">
+      <End Role="LibraryFund" EntitySet="LibraryFund" />
+      <End Role="FundReplenishment" EntitySet="FundReplenishment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FundReplenishment_LiteratureType" Association="Self.FK_FundReplenishment_LiteratureType">
+      <End Role="LiteratureType" EntitySet="LiteratureType" />
+      <End Role="FundReplenishment" EntitySet="FundReplenishment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LibraryFund_Library" Association="Self.FK_LibraryFund_Library">
+      <End Role="Library" EntitySet="Library" />
+      <End Role="LibraryFund" EntitySet="LibraryFund" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

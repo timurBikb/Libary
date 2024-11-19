@@ -1,0 +1,54 @@
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\BikbulatovLibrary.exe.config
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\BikbulatovLibrary.exe
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\BikbulatovLibrary.pdb
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.csproj.AssemblyReference.cache
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\MainWindow.g.cs
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\App.g.cs
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary_MarkupCompile.cache
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary_MarkupCompile.lref
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\MainWindow.baml
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.g.resources
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.Properties.Resources.resources
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.csproj.GenerateResource.cache
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.csproj.CoreCompileInputs.cache
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.exe
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.pdb
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\EmployeesPage.g.cs
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary_Content.g.cs
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\EntityFramework.dll
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\EntityFramework.SqlServer.dll
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\EntityFramework.xml
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\EntityFramework.SqlServer.xml
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\ru\EntityFramework.resources.dll
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\EmployeesPage.baml
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\Bikbulat.EC419E38.Up2Date
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\AddEditPage.g.cs
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\AddEditPage.baml
+D:\Курсовая РПМ\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\App.baml
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\BikbulatovLibrary.exe.config
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\BikbulatovLibrary.exe
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\BikbulatovLibrary.pdb
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\EntityFramework.dll
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\EntityFramework.xml
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\bin\Debug\ru\EntityFramework.resources.dll
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.csproj.AssemblyReference.cache
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\AddEditPage.g.cs
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\EmployeesPage.g.cs
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\MainWindow.g.cs
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\App.g.cs
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary_Content.g.cs
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary_MarkupCompile.cache
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary_MarkupCompile.lref
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\App.baml
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\AddEditPage.baml
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\EmployeesPage.baml
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\MainWindow.baml
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.g.resources
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.Properties.Resources.resources
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.csproj.GenerateResource.cache
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.csproj.CoreCompileInputs.cache
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\Bikbulat.EC419E38.Up2Date
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.exe
+C:\Work FIles\Old\learning\college\Тимка\4й курс\3 проект (курсовая)\BikbulatovLibrary\BikbulatovLibrary\obj\Debug\BikbulatovLibrary.pdb

@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2DA29C87-3922-4F44-A7E8-19A793F2C895}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BikbulatovLibrary</RootNamespace>
+    <AssemblyName>BikbulatovLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AddEditPage.xaml.cs">
+      <DependentUpon>AddEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BikbulatovModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BikbulatovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>BikbulatovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FundReplenishment.cs">
+      <DependentUpon>BikbulatovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Library.cs">
+      <DependentUpon>BikbulatovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryFund.cs">
+      <DependentUpon>BikbulatovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LiteratureType.cs">
+      <DependentUpon>BikbulatovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>BikbulatovModel.tt</DependentUpon>
+    </Compile>
+    <Page Include="AddEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmployeesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BikbulatovModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BikbulatovModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BikbulatovModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BikbulatovModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesPage.xaml.cs">
+      <DependentUpon>EmployeesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Manager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="BikbulatovModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BikbulatovModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BikbulatovModel.edmx.diagram">
+      <DependentUpon>BikbulatovModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photo\10_Кузнецов.jpg" />
+    <Resource Include="Photo\11_Крылова.jpg" />
+    <Resource Include="Photo\12_Попов.jpg" />
+    <Resource Include="Photo\13_Шведов.jpg" />
+    <Resource Include="Photo\14_Романова.jpg" />
+    <Resource Include="Photo\15_Андрианова.jpg" />
+    <Resource Include="Photo\16_Аникина.jpg" />
+    <Resource Include="Photo\17_Калугин.jpg" />
+    <Resource Include="Photo\18_Кашин.jpg" />
+    <Resource Include="Photo\19_Ржевская.jpg" />
+    <Resource Include="Photo\1_Иванова.jpg" />
+    <Resource Include="Photo\20_Загорский.jpg" />
+    <Resource Include="Photo\21_Розова.jpg" />
+    <Resource Include="Photo\22_Барсов.jpg" />
+    <Resource Include="Photo\23_Дунаевский.jpg" />
+    <Resource Include="Photo\24_Левитанский.jpg" />
+    <Resource Include="Photo\25_Морозова.jpg" />
+    <Resource Include="Photo\26_Павлова.jpg" />
+    <Resource Include="Photo\27_Николаев.jpg" />
+    <Resource Include="Photo\28_Егоров.jpg" />
+    <Resource Include="Photo\29_Уральский.jpg" />
+    <Resource Include="Photo\2_Смирнов.jpg" />
+    <Resource Include="Photo\30_Медник.jpg" />
+    <Resource Include="Photo\31_Даниловна.jpg" />
+    <Resource Include="Photo\32_Ририкович.jpg" />
+    <Resource Include="Photo\33_Спасская.jpg" />
+    <Resource Include="Photo\34_Ильин.jpg" />
+    <Resource Include="Photo\35_Сагадеев.jpg" />
+    <Resource Include="Photo\36_Белов.jpg" />
+    <Resource Include="Photo\37_Васильев.jpg" />
+    <Resource Include="Photo\38_Суворова.jpg" />
+    <Resource Include="Photo\39_Сагадеева.jpg" />
+    <Resource Include="Photo\3_Петрова.jpg" />
+    <Resource Include="Photo\40_Андреева.jpg" />
+    <Resource Include="Photo\4_Соколов.jpg" />
+    <Resource Include="Photo\5_Козлова.jpg" />
+    <Resource Include="Photo\6_Михайлова.jpg" />
+    <Resource Include="Photo\7_Жукова.jpg" />
+    <Resource Include="Photo\8_Никулин.jpg" />
+    <Resource Include="Photo\9_Новикова.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BikbulatovModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BikbulatovModel.edmx</DependentUpon>
+      <LastGenOutput>BikbulatovModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BikbulatovModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BikbulatovModel.edmx</DependentUpon>
+      <LastGenOutput>BikbulatovModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

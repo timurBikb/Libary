@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище LibraryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LibraryID" Type="int" Nullable="false" />
+          <Property Name="Post" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AdmissionYear" Type="int" Nullable="false" />
+          <Property Name="Education" Type="nvarchar" MaxLength="100" />
+          <Property Name="Salary" Type="int" Nullable="false" />
+          <Property Name="Experience" Type="varchar" MaxLength="7" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="EmployeeAddress" Type="nvarchar(max)" />
+          <Property Name="EmployeePassport" Type="nvarchar(max)" />
+          <Property Name="EmployeeINN" Type="nvarchar(max)" />
+          <Property Name="EmployeeSNILS" Type="nvarchar(max)" />
+          <Property Name="EmployeeBirthday" Type="date" />
+          <Property Name="EmployeePhoto" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="FundReplenishment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FundID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="LiteratureSource" Type="nvarchar" MaxLength="100" />
+          <Property Name="LiteratureType" Type="int" Nullable="false" />
+          <Property Name="Publisher" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PublishDate" Type="int" />
+          <Property Name="CopyNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Library">
+          <Key>
+            <PropertyRef Name="LibraryID" />
+          </Key>
+          <Property Name="LibraryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LibraryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LibraryAdress" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LibraryCity" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LibraryFund">
+          <Key>
+            <PropertyRef Name="FundID" />
+          </Key>
+          <Property Name="FundID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FundName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LibraryID" Type="int" Nullable="false" />
+          <Property Name="Books" Type="int" Nullable="false" />
+          <Property Name="Magazines" Type="int" Nullable="false" />
+          <Property Name="Newspapers" Type="int" Nullable="false" />
+          <Property Name="Collections" Type="int" Nullable="false" />
+          <Property Name="Dissertations" Type="int" Nullable="false" />
+          <Property Name="Abstracts" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LiteratureType">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Employee_Library">
+          <End Role="Library" Type="Self.Library" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library">
+              <PropertyRef Name="LibraryID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="LibraryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FundReplenishment_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="FundReplenishment" Type="Self.FundReplenishment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="FundReplenishment">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FundReplenishment_LibraryFund">
+          <End Role="LibraryFund" Type="Self.LibraryFund" Multiplicity="1" />
+          <End Role="FundReplenishment" Type="Self.FundReplenishment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LibraryFund">
+              <PropertyRef Name="FundID" />
+            </Principal>
+            <Dependent Role="FundReplenishment">
+              <PropertyRef Name="FundID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FundReplenishment_LiteratureType">
+          <End Role="LiteratureType" Type="Self.LiteratureType" Multiplicity="1" />
+          <End Role="FundReplenishment" Type="Self.FundReplenishment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LiteratureType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="FundReplenishment">
+              <PropertyRef Name="LiteratureType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LibraryFund_Library">
+          <End Role="Library" Type="Self.Library" Multiplicity="1" />
+          <End Role="LibraryFund" Type="Self.LibraryFund" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library">
+              <PropertyRef Name="LibraryID" />
+            </Principal>
+            <Dependent Role="LibraryFund">
+              <PropertyRef Name="LibraryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище LibraryModelContainer">
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FundReplenishment" EntityType="Self.FundReplenishment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Library" EntityType="Self.Library" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LibraryFund" EntityType="Self.LibraryFund" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LiteratureType" EntityType="Self.LiteratureType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Employee_Library" Association="Self.FK_Employee_Library">
+            <End Role="Library" EntitySet="Library" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FundReplenishment_Employee" Association="Self.FK_FundReplenishment_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="FundReplenishment" EntitySet="FundReplenishment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FundReplenishment_LibraryFund" Association="Self.FK_FundReplenishment_LibraryFund">
+            <End Role="LibraryFund" EntitySet="LibraryFund" />
+            <End Role="FundReplenishment" EntitySet="FundReplenishment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FundReplenishment_LiteratureType" Association="Self.FK_FundReplenishment_LiteratureType">
+            <End Role="LiteratureType" EntitySet="LiteratureType" />
+            <End Role="FundReplenishment" EntitySet="FundReplenishment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LibraryFund_Library" Association="Self.FK_LibraryFund_Library">
+            <End Role="Library" EntitySet="Library" />
+            <End Role="LibraryFund" EntitySet="LibraryFund" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LibraryID" Type="Int32" Nullable="false" />
+          <Property Name="Post" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdmissionYear" Type="Int32" Nullable="false" />
+          <Property Name="Education" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Salary" Type="Int32" Nullable="false" />
+          <Property Name="Experience" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="EmployeeAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePassport" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeINN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSNILS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeBirthday" Type="DateTime" Precision="0" />
+          <Property Name="EmployeePhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Library" Relationship="Self.FK_Employee_Library" FromRole="Employee" ToRole="Library" />
+          <NavigationProperty Name="FundReplenishment" Relationship="Self.FK_FundReplenishment_Employee" FromRole="Employee" ToRole="FundReplenishment" />
+        </EntityType>
+        <EntityType Name="FundReplenishment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FundID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LiteratureSource" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LiteratureType" Type="Int32" Nullable="false" />
+          <Property Name="Publisher" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PublishDate" Type="Int32" />
+          <Property Name="CopyNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_FundReplenishment_Employee" FromRole="FundReplenishment" ToRole="Employee" />
+          <NavigationProperty Name="LibraryFund" Relationship="Self.FK_FundReplenishment_LibraryFund" FromRole="FundReplenishment" ToRole="LibraryFund" />
+          <NavigationProperty Name="LiteratureType1" Relationship="Self.FK_FundReplenishment_LiteratureType" FromRole="FundReplenishment" ToRole="LiteratureType" />
+        </EntityType>
+        <EntityType Name="Library">
+          <Key>
+            <PropertyRef Name="LibraryID" />
+          </Key>
+          <Property Name="LibraryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LibraryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LibraryAdress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LibraryCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Library" FromRole="Library" ToRole="Employee" />
+          <NavigationProperty Name="LibraryFund" Relationship="Self.FK_LibraryFund_Library" FromRole="Library" ToRole="LibraryFund" />
+        </EntityType>
+        <EntityType Name="LibraryFund">
+          <Key>
+            <PropertyRef Name="FundID" />
+          </Key>
+          <Property Name="FundID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FundName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LibraryID" Type="Int32" Nullable="false" />
+          <Property Name="Books" Type="Int32" Nullable="false" />
+          <Property Name="Magazines" Type="Int32" Nullable="false" />
+          <Property Name="Newspapers" Type="Int32" Nullable="false" />
+          <Property Name="Collections" Type="Int32" Nullable="false" />
+          <Property Name="Dissertations" Type="Int32" Nullable="false" />
+          <Property Name="Abstracts" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FundReplenishment" Relationship="Self.FK_FundReplenishment_LibraryFund" FromRole="LibraryFund" ToRole="FundReplenishment" />
+          <NavigationProperty Name="Library" Relationship="Self.FK_LibraryFund_Library" FromRole="LibraryFund" ToRole="Library" />
+        </EntityType>
+        <EntityType Name="LiteratureType">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="FundReplenishment" Relationship="Self.FK_FundReplenishment_LiteratureType" FromRole="LiteratureType" ToRole="FundReplenishment" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Employee_Library">
+          <End Role="Library" Type="Self.Library" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library">
+              <PropertyRef Name="LibraryID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="LibraryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FundReplenishment_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="FundReplenishment" Type="Self.FundReplenishment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="FundReplenishment">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FundReplenishment_LibraryFund">
+          <End Role="LibraryFund" Type="Self.LibraryFund" Multiplicity="1" />
+          <End Role="FundReplenishment" Type="Self.FundReplenishment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LibraryFund">
+              <PropertyRef Name="FundID" />
+            </Principal>
+            <Dependent Role="FundReplenishment">
+              <PropertyRef Name="FundID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FundReplenishment_LiteratureType">
+          <End Role="LiteratureType" Type="Self.LiteratureType" Multiplicity="1" />
+          <End Role="FundReplenishment" Type="Self.FundReplenishment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LiteratureType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="FundReplenishment">
+              <PropertyRef Name="LiteratureType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LibraryFund_Library">
+          <End Role="Library" Type="Self.Library" Multiplicity="1" />
+          <End Role="LibraryFund" Type="Self.LibraryFund" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library">
+              <PropertyRef Name="LibraryID" />
+            </Principal>
+            <Dependent Role="LibraryFund">
+              <PropertyRef Name="LibraryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BikbulatovLibraryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="FundReplenishment" EntityType="Self.FundReplenishment" />
+          <EntitySet Name="Library" EntityType="Self.Library" />
+          <EntitySet Name="LibraryFund" EntityType="Self.LibraryFund" />
+          <EntitySet Name="LiteratureType" EntityType="Self.LiteratureType" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Employee_Library" Association="Self.FK_Employee_Library">
+            <End Role="Library" EntitySet="Library" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FundReplenishment_Employee" Association="Self.FK_FundReplenishment_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="FundReplenishment" EntitySet="FundReplenishment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FundReplenishment_LibraryFund" Association="Self.FK_FundReplenishment_LibraryFund">
+            <End Role="LibraryFund" EntitySet="LibraryFund" />
+            <End Role="FundReplenishment" EntitySet="FundReplenishment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FundReplenishment_LiteratureType" Association="Self.FK_FundReplenishment_LiteratureType">
+            <End Role="LiteratureType" EntitySet="LiteratureType" />
+            <End Role="FundReplenishment" EntitySet="FundReplenishment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LibraryFund_Library" Association="Self.FK_LibraryFund_Library">
+            <End Role="Library" EntitySet="Library" />
+            <End Role="LibraryFund" EntitySet="LibraryFund" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище LibraryModelContainer" CdmEntityContainer="BikbulatovLibraryEntities">
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="LibraryModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="LibraryID" ColumnName="LibraryID" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
+                <ScalarProperty Name="AdmissionYear" ColumnName="AdmissionYear" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="Experience" ColumnName="Experience" />
+                <ScalarProperty Name="EmployeeAddress" ColumnName="EmployeeAddress" />
+                <ScalarProperty Name="EmployeePassport" ColumnName="EmployeePassport" />
+                <ScalarProperty Name="EmployeeINN" ColumnName="EmployeeINN" />
+                <ScalarProperty Name="EmployeeSNILS" ColumnName="EmployeeSNILS" />
+                <ScalarProperty Name="EmployeeBirthday" ColumnName="EmployeeBirthday" />
+                <ScalarProperty Name="EmployeePhoto" ColumnName="EmployeePhoto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FundReplenishment">
+            <EntityTypeMapping TypeName="LibraryModel.FundReplenishment">
+              <MappingFragment StoreEntitySet="FundReplenishment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FundID" ColumnName="FundID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="LiteratureSource" ColumnName="LiteratureSource" />
+                <ScalarProperty Name="LiteratureType" ColumnName="LiteratureType" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+                <ScalarProperty Name="CopyNumber" ColumnName="CopyNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Library">
+            <EntityTypeMapping TypeName="LibraryModel.Library">
+              <MappingFragment StoreEntitySet="Library">
+                <ScalarProperty Name="LibraryID" ColumnName="LibraryID" />
+                <ScalarProperty Name="LibraryName" ColumnName="LibraryName" />
+                <ScalarProperty Name="LibraryAdress" ColumnName="LibraryAdress" />
+                <ScalarProperty Name="LibraryCity" ColumnName="LibraryCity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LibraryFund">
+            <EntityTypeMapping TypeName="LibraryModel.LibraryFund">
+              <MappingFragment StoreEntitySet="LibraryFund">
+                <ScalarProperty Name="FundID" ColumnName="FundID" />
+                <ScalarProperty Name="FundName" ColumnName="FundName" />
+                <ScalarProperty Name="LibraryID" ColumnName="LibraryID" />
+                <ScalarProperty Name="Books" ColumnName="Books" />
+                <ScalarProperty Name="Magazines" ColumnName="Magazines" />
+                <ScalarProperty Name="Newspapers" ColumnName="Newspapers" />
+                <ScalarProperty Name="Collections" ColumnName="Collections" />
+                <ScalarProperty Name="Dissertations" ColumnName="Dissertations" />
+                <ScalarProperty Name="Abstracts" ColumnName="Abstracts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LiteratureType">
+            <EntityTypeMapping TypeName="LibraryModel.LiteratureType">
+              <MappingFragment StoreEntitySet="LiteratureType">
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LibraryModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,133 @@
+﻿<Page x:Class="BikbulatovLibrary.EmployeesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BikbulatovLibrary"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ReadersPage" FontFamily="Times New Roman" 
+      IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="2"  Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
+            <TextBlock Text="Количество записей: " FontSize="15"></TextBlock>
+            <TextBlock Name="TBCount" FontSize="15"></TextBlock>
+            <TextBlock Text=" из " FontSize="15"></TextBlock>
+            <TextBlock Name="TBALLRecords" FontSize="15" ></TextBlock>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Поиск: " FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="7 0 0 0"></TextBlock>
+            <TextBox Name="searchTBox" SelectionChanged="searchTBox_SelectionChanged" Height="25" Width="180"></TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="270,0,0,0">
+            <RadioButton GroupName="ageRButton" Content="Зарплата в порядке увеличения" Name="rbuttonUp" Checked="rbuttonUp_Checked" FontSize="15" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ></RadioButton>
+            <RadioButton GroupName="ageRButton" Content="Зарплата в порядке уменьшения" Name="rbuttonDown" Checked="rbuttonDown_Checked" FontSize="15" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  ></RadioButton>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,230,0">
+            <TextBlock Text="Сортировка по категории:" HorizontalAlignment="Left" FontSize="15"/>
+            <ComboBox Name="filterCBox" SelectionChanged="filterCBox_SelectionChanged"
+                  Width="180" Height="25" >
+                <TextBlock Text="Все категории" FontSize="15" />
+                <TextBlock Text="Архивариус" FontSize="15" />
+                <TextBlock Text="Ассистент библиотекаря" FontSize="15" />
+                <TextBlock Text="Библиотекарь" FontSize="15" />
+                <TextBlock Text="Библиотечный ассистент" FontSize="15" />
+                <TextBlock Text="Исследователь" FontSize="15" />
+                <TextBlock Text="Куратор выставок" FontSize="15" />
+                <TextBlock Text="Научный сотрудник" FontSize="15" />
+            </ComboBox>
+        </StackPanel>
+
+        <Button Content="Добавить сотрудника" HorizontalAlignment="Right" Name="addButton" Click="addButton_Click"
+                Width="210"></Button>
+
+        <ListView Name="EmployeeListView" Grid.Row="1" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="600"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Name="LogoImage" Width="120" Stretch="UniformToFill" Margin="0 0 5 5"
+                               HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image.Source>
+                                <Binding Path="EmployeePhoto">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>
+                                            Resources\picture.png
+                                        </ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+
+                        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="10 0 0 0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Сотрудник: " HorizontalAlignment="Center" FontSize="18" ></TextBlock>
+                                <TextBlock Text="{Binding EmployeeSurname}"  HorizontalAlignment="left" FontSize="18"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Место работы: " HorizontalAlignment="Center" FontSize="18" ></TextBlock>
+                                <TextBlock Text="{Binding EmployeeLibrary}"  HorizontalAlignment="left" FontSize="18"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Должность: " HorizontalAlignment="Left" FontSize="18"></TextBlock>
+                                <TextBlock Text="{Binding Post}" HorizontalAlignment="Center" FontSize="18" ></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Заработная плата: " HorizontalAlignment="Left" FontSize="18"></TextBlock>
+                                <TextBlock Text="{Binding Salary}" HorizontalAlignment="Left" FontSize="18"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Паспорт: " HorizontalAlignment="Left" FontSize="18"></TextBlock>
+                                <TextBlock Text="{Binding EmployeePassport}" HorizontalAlignment="Left" FontSize="18"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="ИНН: " HorizontalAlignment="Left" FontSize="18"></TextBlock>
+                                <TextBlock Text="{Binding EmployeeINN}" HorizontalAlignment="Left" FontSize="18"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="СНИЛС: " HorizontalAlignment="Left" FontSize="18"></TextBlock>
+                                <TextBlock Text="{Binding EmployeeSNILS}" HorizontalAlignment="Left" FontSize="18"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Дата рождения: " HorizontalAlignment="Left" FontSize="18"></TextBlock>
+                                <TextBlock Text="{Binding EmployeeBirthday, StringFormat=\{0:MM/dd/yyyy\}}" HorizontalAlignment="Left" FontSize="18"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Адрес: " HorizontalAlignment="Left" FontSize="18"></TextBlock>
+                                <TextBlock Text="{Binding EmployeeAddress}" HorizontalAlignment="Left" FontSize="18"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                                <Button Content="Редактировать" Name="EditButton" Click="EditButton_Click" Margin="2"></Button>
+                                <Button Content="Удалить" Name="deleteButton" Click="deleteButton_Click" Margin="7 2 2 2" Opacity="{Binding EmployeeID}" ></Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Work FIles\\Old\\learning\\college\\\u0422\u0438\u043C\u043A\u0430\\4\u0439 \u043A\u0443\u0440\u0441\\3 \u043F\u0440\u043E\u0435\u043A\u0442 (\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F)\\BikbulatovLibrary\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2DA29C87-3922-4F44-A7E8-19A793F2C895}|BikbulatovLibrary\\BikbulatovLibrary.csproj|c:\\work files\\old\\learning\\college\\\u0442\u0438\u043C\u043A\u0430\\4\u0439 \u043A\u0443\u0440\u0441\\3 \u043F\u0440\u043E\u0435\u043A\u0442 (\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F)\\bikbulatovlibrary\\bikbulatovlibrary\\addeditpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DA29C87-3922-4F44-A7E8-19A793F2C895}|BikbulatovLibrary\\BikbulatovLibrary.csproj|solutionrelative:bikbulatovlibrary\\addeditpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DA29C87-3922-4F44-A7E8-19A793F2C895}|BikbulatovLibrary\\BikbulatovLibrary.csproj|C:\\Work FIles\\Old\\learning\\college\\\u0422\u0438\u043C\u043A\u0430\\4\u0439 \u043A\u0443\u0440\u0441\\3 \u043F\u0440\u043E\u0435\u043A\u0442 (\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F)\\BikbulatovLibrary\\bikbulatovlibrary\\addeditpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2DA29C87-3922-4F44-A7E8-19A793F2C895}|BikbulatovLibrary\\BikbulatovLibrary.csproj|solutionrelative:bikbulatovlibrary\\addeditpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DA29C87-3922-4F44-A7E8-19A793F2C895}|BikbulatovLibrary\\BikbulatovLibrary.csproj|C:\\Work FIles\\Old\\learning\\college\\\u0422\u0438\u043C\u043A\u0430\\4\u0439 \u043A\u0443\u0440\u0441\\3 \u043F\u0440\u043E\u0435\u043A\u0442 (\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F)\\BikbulatovLibrary\\bikbulatovlibrary\\employeespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2DA29C87-3922-4F44-A7E8-19A793F2C895}|BikbulatovLibrary\\BikbulatovLibrary.csproj|solutionrelative:bikbulatovlibrary\\employeespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DA29C87-3922-4F44-A7E8-19A793F2C895}|BikbulatovLibrary\\BikbulatovLibrary.csproj|C:\\Work FIles\\Old\\learning\\college\\\u0422\u0438\u043C\u043A\u0430\\4\u0439 \u043A\u0443\u0440\u0441\\3 \u043F\u0440\u043E\u0435\u043A\u0442 (\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F)\\BikbulatovLibrary\\bikbulatovlibrary\\employeespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DA29C87-3922-4F44-A7E8-19A793F2C895}|BikbulatovLibrary\\BikbulatovLibrary.csproj|solutionrelative:bikbulatovlibrary\\employeespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 350,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddEditPage.xaml.cs",
+              "DocumentMoniker": "C:\\Work FIles\\Old\\learning\\college\\\u0422\u0438\u043C\u043A\u0430\\4\u0439 \u043A\u0443\u0440\u0441\\3 \u043F\u0440\u043E\u0435\u043A\u0442 (\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F)\\BikbulatovLibrary\\BikbulatovLibrary\\AddEditPage.xaml.cs",
+              "RelativeDocumentMoniker": "BikbulatovLibrary\\AddEditPage.xaml.cs",
+              "ToolTip": "C:\\Work FIles\\Old\\learning\\college\\\u0422\u0438\u043C\u043A\u0430\\4\u0439 \u043A\u0443\u0440\u0441\\3 \u043F\u0440\u043E\u0435\u043A\u0442 (\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F)\\BikbulatovLibrary\\BikbulatovLibrary\\AddEditPage.xaml.cs",
+              "RelativeToolTip": "BikbulatovLibrary\\AddEditPage.xaml.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAawCIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T13:55:21.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddEditPage.xaml",
+              "DocumentMoniker": "C:\\Work FIles\\Old\\learning\\college\\\u0422\u0438\u043C\u043A\u0430\\4\u0439 \u043A\u0443\u0440\u0441\\3 \u043F\u0440\u043E\u0435\u043A\u0442 (\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F)\\BikbulatovLibrary\\BikbulatovLibrary\\AddEditPage.xaml",
+              "RelativeDocumentMoniker": "BikbulatovLibrary\\AddEditPage.xaml",
+              "ToolTip": "C:\\Work FIles\\Old\\learning\\college\\\u0422\u0438\u043C\u043A\u0430\\4\u0439 \u043A\u0443\u0440\u0441\\3 \u043F\u0440\u043E\u0435\u043A\u0442 (\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F)\\BikbulatovLibrary\\BikbulatovLibrary\\AddEditPage.xaml",
+              "RelativeToolTip": "BikbulatovLibrary\\AddEditPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-11T13:55:04.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmployeesPage.xaml.cs",
+              "DocumentMoniker": "C:\\Work FIles\\Old\\learning\\college\\\u0422\u0438\u043C\u043A\u0430\\4\u0439 \u043A\u0443\u0440\u0441\\3 \u043F\u0440\u043E\u0435\u043A\u0442 (\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F)\\BikbulatovLibrary\\BikbulatovLibrary\\EmployeesPage.xaml.cs",
+              "RelativeDocumentMoniker": "BikbulatovLibrary\\EmployeesPage.xaml.cs",
+              "ToolTip": "C:\\Work FIles\\Old\\learning\\college\\\u0422\u0438\u043C\u043A\u0430\\4\u0439 \u043A\u0443\u0440\u0441\\3 \u043F\u0440\u043E\u0435\u043A\u0442 (\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F)\\BikbulatovLibrary\\BikbulatovLibrary\\EmployeesPage.xaml.cs",
+              "RelativeToolTip": "BikbulatovLibrary\\EmployeesPage.xaml.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAowC8AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T11:37:59.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeesPage.xaml",
+              "DocumentMoniker": "C:\\Work FIles\\Old\\learning\\college\\\u0422\u0438\u043C\u043A\u0430\\4\u0439 \u043A\u0443\u0440\u0441\\3 \u043F\u0440\u043E\u0435\u043A\u0442 (\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F)\\BikbulatovLibrary\\BikbulatovLibrary\\EmployeesPage.xaml",
+              "RelativeDocumentMoniker": "BikbulatovLibrary\\EmployeesPage.xaml",
+              "ToolTip": "C:\\Work FIles\\Old\\learning\\college\\\u0422\u0438\u043C\u043A\u0430\\4\u0439 \u043A\u0443\u0440\u0441\\3 \u043F\u0440\u043E\u0435\u043A\u0442 (\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F)\\BikbulatovLibrary\\BikbulatovLibrary\\EmployeesPage.xaml",
+              "RelativeToolTip": "BikbulatovLibrary\\EmployeesPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-10T11:37:43.477Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

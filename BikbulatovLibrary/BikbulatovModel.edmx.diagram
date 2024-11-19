@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ea757f3a42cd4a3f9bd9e40ebc8125cb" Name="Diagram1" ZoomLevel="13">
+        <EntityTypeShape EntityType="LibraryModel.Employee" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.FundReplenishment" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Library" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.LibraryFund" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.LiteratureType" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="LibraryModel.FK_Employee_Library" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_FundReplenishment_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_FundReplenishment_LibraryFund" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_FundReplenishment_LiteratureType" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_LibraryFund_Library" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
